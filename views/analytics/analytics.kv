@@ -1,0 +1,48 @@
+<AnalyticsScreen>:
+    name: "analytics"
+    MDFloatLayout:
+
+        MDLabel:
+            text: "📊 Sales Analytics"
+            font_style: "H5"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "top": 0.95}
+            theme_text_color: "Custom"
+            text_color: 0, 0, 0, 1
+
+        MDRaisedButton:
+            text: "🏠 Home"
+            pos_hint: {"right": 0.98, "top": 0.95}
+            size_hint: None, None
+            size: dp(100), dp(40)
+            on_release:
+                app.root.current = "home"
+
+        MDBoxLayout:
+            orientation: "vertical"
+            spacing: dp(30)
+            padding: dp(20)
+            pos_hint: {"center_x": 0.5, "center_y": 0.45}
+            size_hint: 0.9, 0.8
+
+            MDLabel:
+                text: "Sales Per Day"
+                halign: "left"
+                theme_text_color: "Primary"
+                bold: True
+
+            BoxLayout:
+                id: bar_chart_box
+                size_hint_y: None
+                height: dp(200)
+
+            MDLabel:
+                text: "Most Sold Products"
+                halign: "left"
+                theme_text_color: "Primary"
+                bold: True
+
+            BoxLayout:
+                id: pie_chart_box
+                size_hint_y: None
+                height: dp(250)

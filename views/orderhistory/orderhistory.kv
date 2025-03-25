@@ -1,0 +1,28 @@
+<OrderHistoryScreen>:
+    name: "orderhistory"
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(20)
+
+        MDLabel:
+            text: "📜 Order History"
+            halign: "center"
+            font_style: "H5"
+            size_hint_y: None
+            height: dp(50)
+
+        ScrollView:
+            MDBoxLayout:
+                id: order_list
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(10)
+
+        MDRaisedButton:
+            text: "🏠 Back to Home"
+            pos_hint: {"center_x": 0.5}
+            size_hint: 0.4, None
+            height: dp(45)
+            on_press: app.root.current = "home"

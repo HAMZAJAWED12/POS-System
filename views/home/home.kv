@@ -1,0 +1,143 @@
+<HomeScreen>:
+    name: "home"
+    MDFloatLayout:
+
+        MDLabel:
+            text: "POS SYSTEM DASHBOARD"
+            font_style: "H4"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.88}
+            theme_text_color: "Custom"
+            text_color: 0, 0, 0, 1
+
+        MDLabel:
+            id: total_products
+            text: "📦 Total Products: 0"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.80}
+            theme_text_color: "Secondary"
+            font_style: "Subtitle2"
+
+        MDLabel:
+            id: total_orders
+            text: "🧾 Orders Placed: 0"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.76}
+            theme_text_color: "Secondary"
+            font_style: "Subtitle2"
+
+        MDLabel:
+            id: total_revenue
+            text: "💰 Total Revenue: $0.00"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.72}
+            theme_text_color: "Secondary"
+            font_style: "Subtitle2"
+
+
+        MDRaisedButton:
+            text: "Add Products"
+            icon: "cart-plus"
+            pos_hint: {"center_x": 0.5, "center_y": 0.60}
+            size_hint: 0.5, None
+            height: dp(50)
+            elevation: 8
+            on_release: root.go_to_screen("products")
+
+        MDRaisedButton:
+            text: "View Cart"
+            icon: "cart-outline"
+            pos_hint: {"center_x": 0.5, "center_y": 0.50}
+            size_hint: 0.5, None
+            height: dp(50)
+            elevation: 8
+            on_release: root.go_to_screen("cart")
+
+        MDRaisedButton:
+            text: "Order History"
+            icon: "file-document-outline"
+            pos_hint: {"center_x": 0.5, "center_y": 0.40}
+            size_hint: 0.5, None
+            height: dp(50)
+            elevation: 8
+            on_release: root.go_to_screen("orderhistory")
+
+        MDRaisedButton:
+            text: "View Analytics"
+            icon: "chart-bar"
+            pos_hint: {"center_x": 0.5, "center_y": 0.30}
+            size_hint: 0.5, None
+            height: dp(50)
+            elevation: 8
+            on_release: root.go_to_screen("analytics")
+
+        MDLabel:
+            text: "Welcome to Your Smart Store"
+            font_style: "Subtitle1"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.17}
+            theme_text_color: "Custom"
+            text_color: 0.2, 0.2, 0.2, 1
+
+        MDSwitch:
+            pos_hint: {"center_x": 0.85, "center_y": 0.88}
+            on_active: root.toggle_theme(self, self.active)
+<HomeScreen>:
+    name: "home"
+    MDFloatLayout:
+
+        MDLabel:
+            text: "POS SYSTEM DASHBOARD"
+            font_style: "H4"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.88}
+            theme_text_color: "Custom"
+            text_color: 0, 0, 0, 1
+
+        MDRaisedButton:
+            text: "Add Products"
+            icon: "cart-plus"
+            pos_hint: {"center_x": 0.5, "center_y": 0.60}
+            size_hint: 0.5, None
+            height: dp(50)
+            elevation: 8
+            on_release: root.go_to_screen("products")
+
+        MDRaisedButton:
+            text: "View Cart"
+            icon: "cart-outline"
+            pos_hint: {"center_x": 0.5, "center_y": 0.50}
+            size_hint: 0.5, None
+            height: dp(50)
+            elevation: 8
+            on_release: root.go_to_screen("cart")
+
+        MDRaisedButton:
+            text: "Order History"
+            icon: "file-document-outline"
+            pos_hint: {"center_x": 0.5, "center_y": 0.40}
+            size_hint: 0.5, None
+            height: dp(50)
+            elevation: 8
+            on_release: root.go_to_screen("orderhistory")
+
+        MDRaisedButton:
+            text: "View Analytics"
+            icon: "chart-bar"
+            pos_hint: {"center_x": 0.5, "center_y": 0.30}
+            size_hint: 0.5, None
+            height: dp(50)
+            elevation: 8
+            on_release: root.go_to_screen("analytics")
+
+        MDLabel:
+            text: "Welcome to Your Smart Store"
+            font_style: "Subtitle1"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.17}
+            theme_text_color: "Custom"
+            text_color: 0.2, 0.2, 0.2, 1
+
+        MDSwitch:
+            pos_hint: {"center_x": 0.85, "center_y": 0.88}
+            on_active: root.toggle_theme(self, self.active)

@@ -1,0 +1,82 @@
+<ProductScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(15)
+        size_hint: 1, 1
+
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: dp(70)  # ✅ Forces more space for the heading
+
+            MDLabel:
+                text: "Product Management"
+                font_style: "H4"  # ✅ Slightly larger font
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1  # Black text
+                bold: True
+                size_hint_y: None
+                height: dp(40)  # ✅ Adds height to move it up
+
+        MDBoxLayout:
+            orientation: "vertical"
+            spacing: dp(10)
+            size_hint_y: None
+            height: dp(180)  # ✅ Prevents shifting down
+
+            MDTextField:
+                id: product_name
+                hint_text: "Enter Product Name"
+                mode: "rectangle"
+                size_hint_x: 0.9
+                pos_hint: {"center_x": 0.5}
+
+            MDTextField:
+                id: product_price
+                hint_text: "Enter Product Price"
+                mode: "rectangle"
+                input_filter: "float"
+                size_hint_x: 0.9
+                pos_hint: {"center_x": 0.5}
+
+            MDTextField:
+                id: product_stock
+                hint_text: "Enter Stock Quantity"
+                mode: "rectangle"
+                input_filter: "int"
+                size_hint_x: 0.9
+                pos_hint: {"center_x": 0.5}
+
+        MDFillRoundFlatButton:
+            id: add_product_button
+            text: "Add Product"
+            size_hint_x: 0.5
+            pos_hint: {"center_x": 0.5}
+            md_bg_color: 0.2, 0.6, 1, 1
+            on_press: root.add_new_product()
+
+        MDLabel:
+            id: status_label
+            text: ""
+            theme_text_color: "Custom"
+            text_color: 0, 0.6, 0, 1  # Green for success messages
+            halign: "center"
+            size_hint_y: None
+            height: dp(30)
+
+        ScrollView:
+            MDBoxLayout:
+                id: product_list
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(10)
+                padding: dp(10)
+       
+        MDFillRoundFlatButton:
+            text: "🏠 Home"
+            pos_hint: {"center_x": 0.5}
+            md_bg_color: 0.2, 0.6, 1, 1
+            on_press: app.root.current = "home"

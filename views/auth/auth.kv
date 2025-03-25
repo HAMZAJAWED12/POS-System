@@ -1,0 +1,33 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(20)
+
+        Label:
+            text: "Login"
+            font_size: 30
+            size_hint_y: None
+            height: dp(50)
+            bold: True
+            color: 0, 0, 0, 1
+
+        TextInput:
+            id: username
+            hint_text: "Enter Username"
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+
+        TextInput:
+            id: password
+            hint_text: "Enter Password"
+            password: True
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+
+        Button:
+            text: "Login"
+            size_hint_x: 0.5
+            pos_hint: {"center_x": 0.5}
+            background_color: 0.2, 0.6, 1, 1  # Blue button
+            on_press: root.do_login()

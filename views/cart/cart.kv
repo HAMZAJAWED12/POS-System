@@ -1,0 +1,46 @@
+<CartScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(10)
+
+        MDLabel:
+            text: "Shopping Cart"
+            halign: "center"
+            bold: True
+            font_style: "H5"
+
+        ScrollView:
+            MDBoxLayout:
+                id: cart_list
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(10)
+                padding: dp(10)
+
+        MDBoxLayout:
+            size_hint_y: None
+            height: dp(50)
+            padding: dp(10)
+            spacing: dp(10)
+
+            MDLabel:
+                id: total_price
+                text: "Total: $0.00"
+                halign: "right"
+                theme_text_color: "Primary"
+
+        MDFillRoundFlatButton:
+            text: "Checkout"
+            pos_hint: {"center_x": 0.5}
+            md_bg_color: 0.2, 0.6, 1, 1
+            on_press: root.checkout()  # Calls checkout()
+
+
+
+        MDFillRoundFlatButton:
+            text: "🏠 Home"
+            pos_hint: {"center_x": 0.5}
+            md_bg_color: 0.2, 0.6, 1, 1
+            on_press: app.root.current = "home"
